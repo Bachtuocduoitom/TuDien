@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="616.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryApplication.Controller">
+    <children>
+        <VBox layoutY="122.0" prefHeight="498.0" prefWidth="880.0">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <TextField fx:id="searchField" layoutX="20.0" onKeyPressed="#dictionaryLookup" onKeyReleased="#wordSearcher" prefHeight="74.0" prefWidth="365.0" promptText="Text">
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+                <HBox prefHeight="396.0" prefWidth="880.0">
+                    <children>
+                        <ListView fx:id="listView" prefHeight="396.0" prefWidth="390.0">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="20.0" />
+                            </HBox.margin>
+                        </ListView>
+                        <TextArea fx:id="textArea" prefHeight="396.0" prefWidth="491.0">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="50.0" right="20.0" />
+                            </HBox.margin>
+                        </TextArea>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <MenuBar prefHeight="32.0" prefWidth="880.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Add word">
+                    <items>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <TextField fx:id="addWordField" promptText="Word" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <TextField fx:id="addMeanField" promptText="Meaning" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <Button fx:id="buttonAddWord" mnemonicParsing="false" onAction="#addNewWord" text="Add word" />
+                            </graphic>
+                        </MenuItem>
+                    </items></Menu>
+                <Menu mnemonicParsing="false" text="Delete Word">
+                    <items>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <TextField fx:id="deleteField" promptText="Word" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <Button fx:id="buttonDeleteWord" mnemonicParsing="false" onAction="#deleteWord" text="Delete Word" />
+                            </graphic></MenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Correct Word">
+                    <items>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <TextField fx:id="changeWordField" promptText="Word" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <TextField fx:id="changeMeanField" promptText="Meaning" />
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false">
+                            <graphic>
+                                <Button fx:id="buttonChange" mnemonicParsing="false" onAction="#correctWord" text="Change" />
+                            </graphic>
+                        </MenuItem>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+      <Label layoutX="217.0" layoutY="44.0" prefHeight="60.0" prefWidth="446.0" text="  TỪ ĐIỂN ANH - VIỆT" textFill="#3f3757">
+         <font>
+            <Font size="44.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>
